@@ -17,7 +17,7 @@ router.post('/', (req, res)=>{
 });
 
 //Index Route
-router.get('/', (req, res)=>{
+router.get('/movies', (req, res)=>{
   Movies.find({}, (err, foundMovies)=>{
     res.json(foundMovies);
   });
