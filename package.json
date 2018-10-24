@@ -1,0 +1,23 @@
+{
+  "name": "movieapp",
+  "version": "1.0.0",
+  "description": "Rylen del Rio &amp; Alyssa Kieffer's Movie App (MEAN CRUD)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alykief/movieapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alykief/movieapp/issues"
+  },
+  "homepage": "https://github.com/alykief/movieapp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
