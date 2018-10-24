@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
 app.get('/movies', (req, res) => {
   res.send('Hello World!')
