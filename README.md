@@ -1,2 +1,2 @@
 # movieapp
-Rylen &amp; Alyssa's Movie App (MEAN CRUD)
+Rylen del Rio &amp; Alyssa Kieffer's Movie App (MEAN CRUD)
