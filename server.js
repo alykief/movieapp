@@ -6,7 +6,7 @@ const Movies = require('./models/schema.js')
 const moviesController = require('./controllers/movies.js')
 app.use('/movies', moviesController)
 
-mongoose.connect('mongodb://localhost:27017/moviesapp' {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/moviesapp', {useNewUrlParser: true})
 
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose');
