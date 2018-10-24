@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const movieSchema = new mongoose.Schema({
-  title: { type: String, required: true },
+  title: { String, required: true },
   director: String,
   rating: Number,
   year: Number
@@ -10,3 +10,4 @@ const movieSchema = new mongoose.Schema({
 const Movies = mongoose.model('Movies', movieSchema);
 
 module.exports = Movies;
+// test
