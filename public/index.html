@@ -7,8 +7,21 @@
     <script src="/js/app.js" type="text/javascript"></script>
   </head>
   <body ng-controller="MainController as ctrl">
-    <form>
-      {{2+2}}
+    <!-- CREATE MOVIE -->
+    <form ng-submit="ctrl.createMovie()">
+      <input type="text" ng-model="ctrl.title" placeholder="title">
+      <input type="text" ng-model="ctrl.director" placeholder="director">
+      <input type="text" ng-model="ctrl.rating" placeholder="rating">
+      <input type="text" ng-model="ctrl.year" placeholder="year">
+      <input type="submit" placeholder="Create Movie">
     </form>
+
+    <!-- DISPLAY MOVIES -->
+    <ul>
+      <li ng-repeat="movie in ctrl.movies">
+        {{movie.title}}
+        {{movie.rating}}
+      </li>
+    </ul>
   </body>
 </html>
