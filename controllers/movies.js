@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/movies')
-mongoose.connection.once('open', ()=>{
-  console.log('Connected to Mongoose');
-});
-
+//Require Movies
 const Movies = require('../models/schema.js');
 
 //Create Route
 router.post('/', (req, res)=>{
   Movies.create(req.body, (err, createdMovie)=>{
-    res.json(createdMovies);
+    res.json(createdMovie);
   });
 });
 

@@ -8,6 +8,7 @@
   </head>
   <body ng-controller="MainController as ctrl">
     <!-- CREATE MOVIE -->
+    <h1>Add a New Movie</h1>
     <form ng-submit="ctrl.createMovie()">
       <input type="text" ng-model="ctrl.title" placeholder="title">
       <input type="text" ng-model="ctrl.director" placeholder="director">
@@ -17,10 +18,22 @@
     </form>
 
     <!-- DISPLAY MOVIES -->
+    <h1>Rated Movies</h1>
     <ul>
       <li ng-repeat="movie in ctrl.movies">
-        {{movie.title}}
-        {{movie.rating}}
+        Title: {{movie.title}}</br>
+        Director: {{movie.director}}</br>
+        Rating: {{movie.rating}}</br>
+        Year: {{movie.year}}</br>
+        <button type="button" ng-click="ctrl.deleteMovie(movie._id)">Delete</button>
+        </br>
+          <form ng-submit="ctrl.updateMovie(movie)">
+            <input type="text" ng-model="ctrl.updatedTitle" placeholder="title">
+            <input type="text" ng-model="ctrl.updatedDirector" placeholder="director">
+            <input type="text" ng-model="ctrl.updatedRating" placeholder="rating">
+            <input type="text" ng-model="ctrl.updatedYear" placeholder="year">
+            <input type="submit" value="Update Movie">
+          </form>
       </li>
     </ul>
   </body>
