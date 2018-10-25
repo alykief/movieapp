@@ -7,7 +7,7 @@ const Movies = require('../models/schema.js');
 //Create Route
 router.post('/', (req, res)=>{
   Movies.create(req.body, (err, createdMovie)=>{
-    res.json(createdMovies);
+    res.json(createdMovie);
   });
 });
 

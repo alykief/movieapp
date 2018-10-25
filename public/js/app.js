@@ -2,6 +2,9 @@ const app = angular.module('MovieApp', [])
 
 app.controller('MainController', ['$http', function($http){
 
+  this.movie = '';
+  this.movies = '';
+
   this.createMovie = function(){
     $http({
       method: 'POST',
@@ -12,8 +15,18 @@ app.controller('MainController', ['$http', function($http){
         rating: this.rating,
         year: this.year
       }
-    }).then(function(response){
+    }).then(response => {
       console.log(response.data);
+    })
+  }
+
+  this.deleteMovie = function(id){
+    $http({
+      method: 'DELETE',
+      url: '/movies/' + id
+    }).then(response => {
+      const removeByIndex = this.movies.findIndex(movie => { return movie._id === id })
+      this.movies.splice( removeByIndex, 1 )
     })
   }
 
@@ -21,10 +34,13 @@ app.controller('MainController', ['$http', function($http){
     $http({
       method: 'GET',
       url: '/movies',
-    }).then(function(response){
-      console.log(response);
+    }).then(response => {
+      this.movies = response.data
+      console.log(response.data);
     })
   }
+
+  this.getMovies();
 
 
 }])
