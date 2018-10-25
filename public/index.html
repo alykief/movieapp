@@ -5,13 +5,14 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     <script src="/js/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/app.css">
   </head>
   <body ng-controller="MainController as ctrl">
     <!-- CREATE MOVIE -->
     <h1>Add a New Movie</h1>
     <form ng-submit="ctrl.createMovie()">
       <input type="text" ng-model="ctrl.title" placeholder="title">
-      <input type="text" ng-model="ctrl.director" placeholder="director">
+      <input type="text" ng-model="ctrl.director" placeholder="director"></br>
       <input type="text" ng-model="ctrl.rating" placeholder="rating">
       <input type="text" ng-model="ctrl.year" placeholder="year">
       <input type="submit" placeholder="Create Movie">
@@ -29,9 +30,9 @@
         </br>
           <form ng-submit="ctrl.updateMovie(movie)">
             <input type="text" ng-model="ctrl.updatedTitle" placeholder="title">
-            <input type="text" ng-model="ctrl.updatedDirector" placeholder="director">
+            <input type="text" ng-model="ctrl.updatedDirector" placeholder="director"></br>
             <input type="text" ng-model="ctrl.updatedRating" placeholder="rating">
-            <input type="text" ng-model="ctrl.updatedYear" placeholder="year">
+            <input type="text" ng-model="ctrl.updatedYear" placeholder="year"></br>
             <input type="submit" value="Update Movie">
           </form>
       </li>
