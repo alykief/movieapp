@@ -17,7 +17,7 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-  this.getMovie = function(){
+  this.getMovies = function(){
     $http({
       method: 'GET',
       url: '/movies',
@@ -25,5 +25,6 @@ app.controller('MainController', ['$http', function($http){
       console.log(response);
     })
   }
+
 
 }])
