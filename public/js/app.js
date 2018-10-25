@@ -2,8 +2,13 @@ const app = angular.module('MovieApp', [])
 
 app.controller('MainController', ['$http', function($http) {
 
-      this.movie = '';
-      this.movies = '';
+    const controller = this;
+    this.movie = '';
+    this.movies = '';
+
+      // this.toggleEdit = function(movie) {
+      //   movie.edit = !movie.edit
+      // }
 
       this.createMovie = function() {
         $http({
@@ -32,10 +37,10 @@ app.controller('MainController', ['$http', function($http) {
         })
       }
 
-      this.updateMovie = function(id) {
+      this.updateMovie = function(movie) {
         $http({
           method: 'PUT',
-          url: '/movies/' + id,
+          url: '/movies/' + movie._id,
           data: {
             title: this.updatedTitle,
             director: this.updatedDirector,
@@ -43,7 +48,7 @@ app.controller('MainController', ['$http', function($http) {
             year: this.updatedYear
           }
         }).then(function(response) {
-            this.movies.getMovies();
+            controller.getMovies();
           })
         }
 
